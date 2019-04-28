@@ -18,3 +18,12 @@
   :sixth   (range 15 18)
   :seventh (range 18 21)
   :eighth  (range 21 24)})
+
+(defn current-watch
+ []
+ (first
+  (some
+   (fn [watch]
+    (if (.contains (val watch) (current-hour))
+     watch))
+   timings)))

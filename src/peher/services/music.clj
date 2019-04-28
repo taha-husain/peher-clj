@@ -9,18 +9,9 @@
 (def config (conf/read-config (clojure.java.io/resource "config.edn")))
 (def api-key (:api-key config))
 
-(defn current-watch
- []
- (first
-  (some
-   (fn [watch]
-    (if (.contains (val watch) (t/current-hour))
-     watch))
-   t/timings)))
-
 (defn current-ragas
  []
- ((current-watch) r/raga-list))
+ ((t/current-watch) r/raga-list))
 
 (defn fetch-list-from-yt
  []
