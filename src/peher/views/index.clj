@@ -3,11 +3,9 @@
             [hiccup.page  :refer :all]))
 
 (defn page
- [list]
+ []
  (html
-  [:p (:title (first list))]
   [:div {:id "yt-player"}]
   (include-js "js/bundle.js")
   (include-js "https://www.youtube.com/iframe_api")
-  (include-js "https://cdn.rawgit.com/labnol/files/master/yt.js")
-  ))
+  (include-js "https://cdn.rawgit.com/labnol/files/master/yt.js")))

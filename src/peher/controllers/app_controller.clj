@@ -4,4 +4,8 @@
 
 (defn index
  []
- (index/page (m/music-list)))
+ (index/page))
+
+(defn music-list
+ []
+ (m/music-list))
